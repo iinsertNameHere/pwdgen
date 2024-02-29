@@ -1,0 +1,265 @@
+body {
+    background-color: #111827;
+    color: #fff;
+    font-family: 'Exo';
+}
+
+#content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*-------------------------------------------*/
+
+.input {
+    margin: 1em 0 0 0;
+    width: 360px;
+}
+
+.input input {
+    font-size: 100%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    outline: none;
+    border: 2px solid rgb(141, 109, 255);
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    color: #847f9c;
+    text-align: center;
+}
+
+/*-------------------------------------------*/
+
+.crack_timer p {
+  font-size: 11px;
+}
+
+.crack_timer span {
+  width: 358px;
+  color: rgb(141, 109, 255);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-align: center;
+}
+
+/*-------------------------------------------*/
+
+.range_slider {
+  position: relative;
+  width: 100%;
+  height: calc(65px - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3d3a4e57;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.range_slider::before, .range_slider::after {
+  position: absolute;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.range_slider::before {
+  content: attr(data-min);
+  left: 10px;
+}
+
+.range_slider::after {
+  content: attr(data-max);
+  right: 10px;
+}
+
+.field_title {
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: #847f9c91;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.range_slider .length_title::after {
+  content: attr(data-length);
+  position: absolute;
+  right: -16px;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+
+#slider {
+  -webkit-appearance: none;
+  width: calc(100% - (70px));
+  height: 2px;
+  border-radius: 5px;
+  background: #3d3a4e;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+#slider::-webkit-slider-thumb:hover {
+  background: #d4d4d4;
+  transform: scale(1.2);
+}
+
+#slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+#slider::-moz-range-thumb:hover {
+  background: #d4d4d4;
+}
+
+/*-------------------------------------------*/
+
+.checkbox {
+    display: block;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px #fff;
+    margin: 10px;
+}
+
+.checkbox div {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    top: -52px;
+    left: -52px;
+    position: absolute;
+    transform: rotateZ(45deg);
+    z-index: 100;
+}
+
+.checkbox input[type=checkbox]:checked+div {
+    left: -10px;
+    top: -10px;
+}
+
+.checkbox input[type=checkbox] {
+    position: absolute;
+    left: 50px;
+    visibility: hidden;
+}
+
+.checkbox_transition {
+    transition: 300ms ease;
+}
+
+.cb_label {
+  font-size: 13px;
+}
+
+/*-------------------------------------------*/
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button-left,
+.button-right {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button-left {
+    padding: 0 2rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    background: #3d3a4e;
+}
+
+.button-right {
+    padding: 0 1rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    font-size: 17px;
+    background: #3d3a4e;
+    margin-left: 3px;
+}
+
+.button-left:hover::before,
+.button-right:hover::before {
+    transform: scaleX(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button-left::before,
+.button-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    transition: all 0.100s;
+}
+
+.button-left::before {
+    background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, #2196F3 94.3%);
+    transform-origin: right;
+}
+
+.button-right::before {
+    background: linear-gradient(82.3deg, #2196F3 10.8%, #2196F3 94.3%);
+    transform-origin: left;
+}
+
+/*-------------------------------------------*/
+
+#tip {
+  font-weight: 1000;
+  width: 358px;
+  color: #847f9c;
+  position: absolute;
+}
+
+#tip span {
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=1280, initial-scale=1">
+</head>
+
+<body>
+    <div id="content">
+    <center>
+        <div class="input">
+            <input type="text" id="in_password" disabled>
+        </div>
+        <div class="crack_timer">
+            <p>Estimated crack time:</p>
+            <span id="txt_crack_timer">????</span>
+        </div>
+        <br>
+        <div id="generator_ui">
+            <div class="range_slider" data-min="4" data-max="32">
+                <div class="length_title field_title" id="txt_length" data-length='4'>Password Length:</div>
+                <input id="slider" type="range" min="4" max="32" value="4" />
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div style="margin: 10px;">
+                    <label for="special" class="cb_label">Special chars</label>
+                    <label class="checkbox" id="specia">
+                        <input id="cb_special" type="checkbox">
+                        <div class="checkbox_transition"></div>
+                    </label>
+                </div>
+                <div style="margin: 10px;">
+                    <label for="unreadable" class="cb_label">Unreadable special chars</label>
+                    <label class="checkbox" id="unreadable" style="filter: brightness(50%)">
+                        <input id="cb_unreadable" type="checkbox" disabled>
+                        <div class="checkbox_transition"></div>
+                    </label>
+                </div>
+                <div style="margin: 10px;">
+                    <label for="numbers" class="cb_label">Numbers</label>
+                    <label id="numbers" class="checkbox">
+                        <input id="cb_numbers" type="checkbox">
+                        <div class="checkbox_transition"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <button class="button-left" id="btn_action">
+                <span class="button-content">Generate</span>
+            </button>
+            <button class="button-right" id="btn_mode">
+                <span class="button-content">↻</span>
+            </button>
+        </div>
+        <p>Press <span id="ico_mode" style="color: rgba(150, 93, 233, 1)">↻</span> to switch to <span id="txt_mode" style="color: #2196F3">Check-Mode</span>.</p>
+        <p id="tip">Tip: <span id="txt_tip"></span></p>
+    </center>
+    </div>
+    <script src="js/password_tip.js"></script>
+    <script src="js/zxcvbn.js"></script>
+    <script src="js/password_cracktimer.js"></script>
+    <script src="js/password_generator.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
